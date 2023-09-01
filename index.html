@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="container">
+		<div class="row formRow">
+			<div class="column">
+				<!-- Trello new card form -->
+				<form id="cardForm">
+					<h1>Create a card:</h1>
+					<br />
+					<label for="cardTitle">Card title:</label>
+					<input name="cardTitle" id="cardTitle" type="text" />
+					<br />
+					<label for="cardContent">Description:</label>
+					<input name="cardContent" id="cardContent" type="text" />
+					<br />
+					<button id="cardSubmitButton">Update Preview</button>
+				</form>
+			</div>
+			<div class="column">
+				<!-- Preview new card -->
+				<div id="cardPreview" class="trelloCard" draggable="true">
+					<h3 class="cardDisplay-title">
+						Fill out the form!
+					</h3>
+					<p class="cardDisplay-content">
+						Write a description!
+					</p>
+				</div>
+			</div>
+
+			<div class="column">
+				<!-- Trello new column form -->
+				<form id="columnForm">
+					<h1>Create a column:</h1>
+					<br />
+					<label for="columnTitle">Column title:</label>
+					<input type="text" name="columnTitle" id="columnTitle">
+					<br />
+					<button id="columnSubmitButton">Add column</button>
+				</form>
+			</div>
+		</div>
+		<div id="dataDisplayRow" class="row dataDisplayRow">
+			<!-- Trello columns & cards -->
+			
+
+		</div>
+	</div>
+
+	<script src="./dragging.js"></script>
+	<script>
+
+		renderColumns();
+
+	</script>
+</body>
+</html>

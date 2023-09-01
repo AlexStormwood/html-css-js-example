@@ -1,0 +1,65 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: paleturquoise;
+}
+
+.container {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.row {
+	width: 100dvw;
+	padding: 2dvw;
+}
+
+
+
+.formRow {
+	width: 100dvw;
+	margin: 0;
+	display: flex;
+	height: 10dvh;
+}
+
+.dataDisplayRow {
+	height: 70dvh;
+	margin: 0;
+	padding: 1%;
+	display: flex;
+
+}
+
+.formRow .column {
+	width: 50dvw;
+	padding: 1vw;
+	margin: 0;
+}
+
+.trelloColumn {
+	width: 33%;
+	background-color: grey;
+	height: 80%;
+	margin: 1%;
+}
+
+.trelloCard {
+	background-color: darkgoldenrod;
+	width: 90%;
+	height: 10dvh;
+	text-align: center;
+	margin: 0;
+}
+
+.trelloColumn .trelloCard {
+	margin: 5%;
+}
+
+
+#cardPreview{
+	background-color: wheat;
+}
