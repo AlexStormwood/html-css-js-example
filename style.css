@@ -1,3 +1,10 @@
+/* 
+...do you remember CSS from term 1?
+
+I think the newer things in here are:
+- dvw/dvh values, which are a different responsive pixel unit
+- maybe an implementation of containers/rows/columns? Real nice layout.
+*/
 * {
 	margin: 0;
 	padding: 0;
@@ -43,7 +50,8 @@ body {
 .trelloColumn {
 	width: 33%;
 	background-color: grey;
-	height: 80%;
+	min-height: 80%;
+	height: max-content;
 	margin: 1%;
 }
 
