@@ -219,6 +219,7 @@ function loadData(){
 		renderColumns();
 		console.log("Data loaded!");
 	} else {
+		trelloData = backupTrelloData;
 		console.log("Data not found. Was anything saved previously?");
 	}
 
