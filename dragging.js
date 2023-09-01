@@ -59,9 +59,11 @@ function renderColumns(){
 		columnHeading.innerText = column.name;
 		columnNode.appendChild(columnHeading);
 
-		let columnData = trelloData.columns.filter(column => column.name == event.target.id)[0];
-		columnData.cards.forEach(card => {
-			// TODO
+		column.cards.forEach(card => {
+			let newCard = document.getElementById("cardPreview").cloneNode(true);
+			newCard.querySelector(".cardDisplay-title").innerText = card.title;
+			newCard.querySelector(".cardDisplay-content").innerText = card.content;
+			columnNode.appendChild(newCard);
 		})
 
 		columnNode.id = column.name;
@@ -84,24 +86,24 @@ function allowDrop(event){
 function dropCard(event){
 	event.preventDefault();
 	let data = event.dataTransfer.getData("text");
-	if (data == "cardPreview") {
-		// If card was dragged from the preview area, clone it
-		// and assign it a unique ID
-		let previewCardClone = document.getElementById(data).cloneNode(true);
-		previewCardClone.addEventListener("dragstart", drag);
-		
-		let columnData = trelloData.columns.filter(column => column.name == event.target.id)[0];
-		console.log(columnData);
 
-		previewCardClone.id = `${columnNameWithCardCount.name}-${columnNameWithCardCount.cards.length}`;
+	let oldCard = document.getElementById(data);
 
-		event.target.appendChild(previewCardClone);
-
-
-	} else {
-		let cardDragged = document.getElementById(data);
-		event.target.appendChild(cardDragged);
+	// pull out card data from old card DOM element, add to new column
+	let oldCardData = {
+		name: oldCard.getElementsByClassName
 	}
+
+	// find matching old card by ID in all columns, remove it
 	
 	
+	// re-render the columns
+	renderColumns();
+}
+
+function addCardToColumnData(cardData, columnName){
+	let targetColumn = trelloData.columns.filter(column => column.name == columnName)[0];
+	targetColumn.cards.push(cardData);
+
+	renderColumns();
 }
